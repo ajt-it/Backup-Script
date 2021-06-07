@@ -46,8 +46,6 @@ echo " "
 
 #### INITIATION EN FTP DE LA CONNECTION DISTANTE POUR TRANSFERT DE LA SAUVEGARDE LOACALE
 
-###################sshpass -p $pwd scp -r $directory_backup $login@$ftp_srv:$destination_backup
-
 cd $directory_backup
 
 lftp sftp://$login:$pwd@$ftp_srv:$port <<EOF
@@ -60,6 +58,7 @@ EOF
 echo "Sauvegarde du site WordPress & de sa base de donnée sur le serveur distant : RÉUSSITE !"
 
 echo " "
+
 #### SUPPRESSION DE LA SAUVEGARDE LOCALE
 rm -rf $directory_backup
 
