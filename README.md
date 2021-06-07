@@ -10,7 +10,10 @@ Vous aurez besoin d'un accès Telnet sur les cibles, ainsi que d'un même "Usern
 Installation
 apt install python
 
-chmod +x./python-p6aic-switch.py
+Afin de rendre le script exécutable, il faut rentrer en ligne de commande :
+
+# chmod u+x backup_wp.sh
+
 
 Configuration
 Vous devez renseigner l'username dans la variable "Username" du fichier python-p6aic-switch.py :
