@@ -1,8 +1,11 @@
 # Backup-Script
-This script (bash) is used to save data and copy it to an external FTP server. The script will rotate the backups (7 days) to avoid an accumulation of these files.
-Ce script assiste l'administrateur réseau dans l'automatisation de certaines tâches répétitives de configuration des commutateurs (switchs) Cisco.
+Ce script (bash) permet de sauvegarder des données et de les copier sur un serveur FTP externe. 
+Le script assurera une rotation (7 jours) des sauvegardes afin d’éviter une accumulation de ces fichiers..
 
 Représentation de l'infrastructure :
+
+![p4](https://user-images.githubusercontent.com/46109209/120953802-581a8e80-c73d-11eb-98c5-d3161e6ce3a4.png)
+
 
 vb
 
