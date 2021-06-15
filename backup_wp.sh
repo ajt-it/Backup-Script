@@ -18,8 +18,8 @@ directory_backup=/home/backups/backup-$date_backup
 /bin/tar -cvPf $directory_backup/wordpress-$date_backup.tar.gz /var/www/html/wordpress
 
 #### IDENTIFIANTS DE LA BD MySQL: wordpress
-userwp=wordpress
-w2pass=wpadmin
+userwp=userId
+w2pass=password
 #### EXÉCUTION DE LA COMPRESSION DES FICHIERS DE MySQL EN .sql.gz
 /usr/bin/mysqldump -u $userwp -p$w2pass wordpress | /usr/bin/gzip > $directory_backup/mysqldump-$date_backup.sql.gz
 
@@ -30,8 +30,8 @@ echo "Connexion au serveur distant !"
 
 #### IDENTIFIANTS SERVEUR DISTANT POUR CONNECTION FTP
 ftp_srv=192.168.1.161
-login=ftpuser
-pwd=Pwd2021
+login=userId
+pwd=password
 port=22
 zip_wp=*.tar.gz
 zip_bd=*.sql.gz
