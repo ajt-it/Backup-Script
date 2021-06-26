@@ -1,4 +1,5 @@
-
+![Python 2.7](https://img.shields.io/badge/shell-Bash-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Backup-Script
 
