@@ -44,17 +44,6 @@ echo "Sauvegarde du site WordPress & de sa base de donnée sur le serveur distan
 
 echo " "
 
-#### INITIATION EN FTP DE LA CONNECTION DISTANTE POUR TRANSFERT DE LA SAUVEGARDE LOACALE
-
-cd $directory_backup
-
-lftp sftp://$login:$pwd@$ftp_srv:$port <<EOF
-mkdir $destination_backup
-cd $destination_backup
-mput $zip_wp $zip_bd
-bye
-EOF
-
 echo "Sauvegarde du site WordPress & de sa base de donnée sur le serveur distant : RÉUSSITE !"
 
 echo " "
@@ -68,26 +57,6 @@ sshpass -p $pwd ssh $login@$ftp_srv 'cd /home/ftpuser/backups/site_wp/
 
 cd /home/ftpuser/backups/site_wp/
 
-echo " "
-
-dirNumb=$(ls -l | grep ^d | wc -l) ## NOMBRE DE SAUVEGARDE SUR LE SERVEUR DISTANT
-
-echo "Il y a présentement $dirNumb sauvegarde(s) sur le serveur distant !"
-
-echo " "
-
-oldDir=$(ls -tr | head -n 1) ## DÉTECTION DE LA SAUVEGARDE LA PLUS ANCIENNE
-
-echo ".... $oldDir : est la sauvgarde la plus ancienne !"
-
-echo " "
-#### EXÉCUTION DE LA ROTATION DES SAUVEGARDES, UN MAXIMUN DE 7 SAUVEGARDES.
-if [ "$dirNumb" -gt 7 ] ; then
-	rm -rf "$oldDir"
-	echo "Suppression de $oldDir"
-	else
-	echo "Aucune rotation à effectuer !"
-fi'
 echo " "
 echo " FIN DU SCRIPT ! "
 echo " "
